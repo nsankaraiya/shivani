@@ -19,8 +19,8 @@ public class CalculatorServiceIT {
         CloseableHttpClient httpclient = HttpClients.createDefault();
         HttpGet httpGet = new HttpGet("http://localhost:9999/calculator/api/calculator/ping");
         HttpResponse response = httpclient.execute(httpGet);
-        assertEquals(501, response.getStatusLine().getStatusCode());
-        assertThat(EntityUtils.toString(response.getEntity()), containsString("Welcome to Java Maven Calculator Web App!!!"));
+        assertEquals(200, response.getStatusLine().getStatusCode());
+        assertThat(EntityUtils.toString(response.getEntity()), containsString("Welcome to Not Java Maven Calculator Web App!!!"));
     }
 
     @Test
@@ -28,8 +28,8 @@ public class CalculatorServiceIT {
         CloseableHttpClient httpclient = HttpClients.createDefault();
         HttpGet httpGet = new HttpGet("http://localhost:9999/calculator/api/calculator/add?x=8&y=26");
         HttpResponse response = httpclient.execute(httpGet);
-        assertEquals(501, response.getStatusLine().getStatusCode());
-        assertThat(EntityUtils.toString(response.getEntity()), containsString("\"result\":34"));
+        assertEquals(200, response.getStatusLine().getStatusCode());
+        assertThat(EntityUtils.toString(response.getEntity()), containsString("\"resulttttt\":34"));
     }
 
     @Test
@@ -37,7 +37,7 @@ public class CalculatorServiceIT {
         CloseableHttpClient httpclient = HttpClients.createDefault();
         HttpGet httpGet = new HttpGet("http://localhost:9999/calculator/api/calculator/sub?x=12&y=8");
         HttpResponse response = httpclient.execute(httpGet);
-        assertEquals(500, response.getStatusLine().getStatusCode());
+        assertEquals(200, response.getStatusLine().getStatusCode());
         assertThat(EntityUtils.toString(response.getEntity()), containsString("\"result\":4"));
     }
 
