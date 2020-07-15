@@ -60,11 +60,17 @@ public class CalculatorServiceIT {
     }
     
     @Test
-    public void testSum() {
-        int a = 15;
-        int b = 25;
-        int expectedResult = 35;
-        long result = objCalcUnderTest.add(a, b);
-        Assert.assertEquals(expectedResult, result);;
+    public void test(){
+    	throw new RuntimeException();
+    }
+    
+    @Test
+    public void fail1() {
+        throw new NullPointerException("Will fail");
+    }
+
+    @Test
+    public void fail2() throw IOException {
+        throw new IOException("Will fail");
     }
 }
