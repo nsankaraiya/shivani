@@ -37,7 +37,7 @@
         </snapshotRepository>
     </distributionManagement>
 	-->
-	<!-- Above section removed -->
+	
     <dependencies>
         <dependency>
             <groupId>org.glassfish.jersey.containers</groupId>
