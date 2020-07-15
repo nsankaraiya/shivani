@@ -20,7 +20,7 @@ public class CalculatorServiceIT {
         HttpGet httpGet = new HttpGet("http://localhost:9999/calculator/api/calculator/ping");
         HttpResponse response = httpclient.execute(httpGet);
         assertEquals(200, response.getStatusLine().getStatusCode());
-        assertThat(EntityUtils.toString(response.getEntity()), containsString("Welcome to Not Java Maven Calculator Web App!!!"));
+        assertThat(EntityUtils.toString(response.getEntity()), containsString("Welcome to Java Maven Calculator Web App!!!"));
     }
 
     @Test
@@ -29,7 +29,7 @@ public class CalculatorServiceIT {
         HttpGet httpGet = new HttpGet("http://localhost:9999/calculator/api/calculator/add?x=8&y=26");
         HttpResponse response = httpclient.execute(httpGet);
         assertEquals(200, response.getStatusLine().getStatusCode());
-        assertThat(EntityUtils.toString(response.getEntity()), containsString("\"resulttttt\":34"));
+        assertThat(EntityUtils.toString(response.getEntity()), containsString("\"result\":34"));
     }
 
     @Test
@@ -57,5 +57,14 @@ public class CalculatorServiceIT {
         HttpResponse response = httpclient.execute(httpGet);
         assertEquals(200, response.getStatusLine().getStatusCode());
         assertThat(EntityUtils.toString(response.getEntity()), containsString("\"result\":1"));
+    }
+    
+    @Test
+    public void testAdd() {
+        int a = 15;
+        int b = 25;
+        int expectedResult = 35;
+        long result = objCalcUnderTest.add(a, b);
+        Assert.assertEquals(expectedResult, result);;
     }
 }
