@@ -22,7 +22,7 @@
         <url>https://github.com/maping/java-maven-calculator-web-app.git</url>
         <tag>HEAD</tag>
     </scm>
-    
+    -->
 
     <distributionManagement>
         <repository>
@@ -36,7 +36,7 @@
             <url>http://192.168.100.101:8062/artifactory/calc-app-snap/</url>
         </snapshotRepository>
     </distributionManagement>
-	-->
+	
     <dependencies>
         <dependency>
             <groupId>org.glassfish.jersey.containers</groupId>
