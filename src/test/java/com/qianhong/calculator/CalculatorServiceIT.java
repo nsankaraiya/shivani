@@ -68,9 +68,4 @@ public class CalculatorServiceIT {
     public void fail1() {
         throw new NullPointerException("Will fail");
     }
-
-    @Test
-    public void fail2() throw IOException {
-        throw new IOException("Will fail");
-    }
 }
