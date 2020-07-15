@@ -60,7 +60,7 @@ public class CalculatorServiceIT {
     }
     
     @Test
-    public void testAdd() {
+    public void testSum() {
         int a = 15;
         int b = 25;
         int expectedResult = 35;
